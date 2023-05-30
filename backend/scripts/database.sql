@@ -1,0 +1,19 @@
+CREATE TABLE books (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  author_id INT,
+  genre_id INT,
+  summary TEXT,
+  FOREIGN KEY (author_id) REFERENCES authors(id),
+  FOREIGN KEY (genre_id) REFERENCES genres(id)
+);
+
+CREATE TABLE authors (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE genres (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+);
